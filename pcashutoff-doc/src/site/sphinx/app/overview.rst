@@ -3,36 +3,34 @@
 
 Overview of the PCA Shutoff App
 ###############################
-
-Running on a medical application platform (MAP), the PCA Shutoff App oversees
-usage of a patient controlled analgesia infusion pump
-
-The medical application encompasses the scenario of shutting down a PCA pump.
-
-
-PCA Usage and the Shutoff Scenario
-**********************************
+The system as configured by the *PCA Shuttoff Application* is hosted on the
+|MDCF| medical application platform (**MAP**). The **app** and its medical 
+devices interact through the transparent middleware of the platform in order to 
+run, monitor, and in extreme cases, shut down a PCA pump under its 
+control being used to relief patient pain.
 
 
-The PCA Shutoff System
-**********************
+PCA Usage and Shutoff
+*********************
+Describe how the pump is used in normal operation, and the shutoff scenario...  
+
+
+Components of the System
+************************
+Break out components in terms of a classic closed control loop...
 
 App Control and Display
 =======================
-Controller
-Process model
+loop: controller & process model
 
+PCA Stop Port
+=============
+loop: actuator
 
-Controlled Device
-=================
-Actuator
-Controlled pump
+PCA Pump
+========
+loop: controlled process
 
-Physiological Inputs
-====================
-Sensors
-
-Medical Device Interfaces    
--------------------------
-Existence of pump with stop action, SpO2, EtCO2, respiration rate measures.
-Pseudo devices
+Monitoring Devices
+==================
+loop: sensors

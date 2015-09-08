@@ -4,6 +4,21 @@
 Modeling the PCA Shutoff App
 ############################
 
+AADL
+
+real-time, embedded systems with analysis capabilities.
+hirearchy of systems
+
+
+Components:
+Application
+Devices
+Requirements
+
+Subsections decompose the system into five classes of models...
+
+Requirements
+
 App is looking to exchange SpO2, EtCO2, pulse rate and respiration rate 
 physiological metrics with the devices it is connected to. This package
 contains requirements for pulse ox, capnography and PCA pump devices.
@@ -52,27 +67,32 @@ Structure and Rationale
 Medical Device AADL
 *******************
 
-PCAShutoffApp_etco2.aadl
-========================
+
+Medical App Requirements AADL
+*****************************
+
+
+PCAShutoffApp.aadl
+==================
 
 Structure and Rationale
 -----------------------
 
 
-PCAShutoffApp_spo2.aadl
-=======================
-
-Structure and Rationale
------------------------
-
-PCAShutoffApp_pcastop.aadl
+PCAShutoffApp_pulseox.aadl
 ==========================
 
 Structure and Rationale
 -----------------------
 
 
-PCAShutoffApp_single.aadl
+PCAShutoffApp_capnog.aadl
+=========================
+
+Structure and Rationale
+-----------------------
+
+PCAShutoffApp_pcapump.aadl
 ==========================
 
 Structure and Rationale
@@ -87,3 +107,10 @@ Requirements (XML)
 
 Eclipse Project File
 ********************
+
+
+
+Medical Device Interfaces    
+-------------------------
+Existence of pump with stop action, SpO2, EtCO2, respiration rate measures.
+Pseudo devices
