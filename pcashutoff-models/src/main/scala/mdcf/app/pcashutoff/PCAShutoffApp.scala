@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------+
-   PCAShutoffApp.scala - All requirements for an app configured system involved 
-     with running, monitoring & shutting down a PCA infusion pump.
+   PCAShutoffApp_all.scala - All requirements for an app configured system 
+     involved with running, monitoring & shutting down a PCA infusion pump.
 
    Author: Stephen C. Barrett (scbarrett@ksu.edu)
            Department of Computing & Information Sciences
@@ -12,13 +12,13 @@
    capable of shutting down, if need be.
    Note that all the scenario requirements are contained in this file.
    ---------------------------------------------------------------------------*/
-package mdcf.app.pcashutoff_single
+package mdcf.app.pcashutoff_all
 import edu.ksu.cis.santos.mdcf.dms._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.clas._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.schema._
 
 
-trait PCAShutoffApp_single extends ICE_APP_REQ 
+trait PCAShutoffApp_all extends ICE_APP_REQ 
 {
   val etco2 : ICE_EtCo2_Numeric 
   val etco2_get : ICE_Get_Exchange
@@ -37,11 +37,11 @@ trait PCAShutoffApp_single extends ICE_APP_REQ
 }
 
 
-object PCAShutoffApp_single
+object PCAShutoffApp_all
 {  
-  @Inv val req_etco2_get : Predicate[PCAShutoffApp_single] = pred 
+  @Inv val req_etco2_get : Predicate[PCAShutoffApp_all] = pred 
   {
-    req : PCAShutoffApp_single => req.etco2 match 
+    req : PCAShutoffApp_all => req.etco2 match 
     {              
       case etco2_ex : ICE_EtCo2_Numeric => 
           etco2_ex.exchanges.values.exists(  
@@ -55,9 +55,9 @@ object PCAShutoffApp_single
     }
   }
 
-  @Inv val req_etco2_per : Predicate[PCAShutoffApp_single] = pred 
+  @Inv val req_etco2_per : Predicate[PCAShutoffApp_all] = pred 
   {
-    req : PCAShutoffApp_single => req.etco2 match 
+    req : PCAShutoffApp_all => req.etco2 match 
     {              
       case etco2_ex : ICE_EtCo2_Numeric => 
           etco2_ex.exchanges.values.exists(  
@@ -72,9 +72,9 @@ object PCAShutoffApp_single
   }
 
   
-  @Inv val req_respire_get : Predicate[PCAShutoffApp_single] = pred 
+  @Inv val req_respire_get : Predicate[PCAShutoffApp_all] = pred 
   {
-    req : PCAShutoffApp_single => req.respire match 
+    req : PCAShutoffApp_all => req.respire match 
     {              
       case respire_ex : ICE_RespiratoryRate_Numeric => 
           respire_ex.exchanges.values.exists(  
@@ -88,9 +88,9 @@ object PCAShutoffApp_single
     }
   }
 
-  @Inv val req_respire_per : Predicate[PCAShutoffApp_single] = pred 
+  @Inv val req_respire_per : Predicate[PCAShutoffApp_all] = pred 
   {
-    req : PCAShutoffApp_single => req.respire match 
+    req : PCAShutoffApp_all => req.respire match 
     {              
       case respire_ex : ICE_RespiratoryRate_Numeric => 
           respire_ex.exchanges.values.exists(  
@@ -105,9 +105,9 @@ object PCAShutoffApp_single
   }
   
   
-  @Inv val req_spo2_get : Predicate[PCAShutoffApp_single] = pred 
+  @Inv val req_spo2_get : Predicate[PCAShutoffApp_all] = pred 
   {
-    req : PCAShutoffApp_single => req.spo2 match 
+    req : PCAShutoffApp_all => req.spo2 match 
     {              
       case spo2_ex : ICE_SpO2_Numeric => 
           spo2_ex.exchanges.values.exists(  
@@ -121,9 +121,9 @@ object PCAShutoffApp_single
     }
   }
   
-  @Inv val req_spo2_per : Predicate[PCAShutoffApp_single] = pred 
+  @Inv val req_spo2_per : Predicate[PCAShutoffApp_all] = pred 
   {
-    req : PCAShutoffApp_single => req.spo2 match 
+    req : PCAShutoffApp_all => req.spo2 match 
     {              
       case spo2_ex : ICE_SpO2_Numeric => 
           spo2_ex.exchanges.values.exists(  
@@ -137,9 +137,9 @@ object PCAShutoffApp_single
   }
 
 
-  @Inv val req_stop_act : Predicate[PCAShutoffApp_single] = pred 
+  @Inv val req_stop_act : Predicate[PCAShutoffApp_all] = pred 
   {
-    req : PCAShutoffApp_single => req.stop match 
+    req : PCAShutoffApp_all => req.stop match 
     {              
       case stop_ex : ICE_PCAF_Stop_Action => 
           stop_ex.exchanges.values.exists(  
