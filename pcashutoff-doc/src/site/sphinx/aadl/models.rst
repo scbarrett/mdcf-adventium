@@ -4,18 +4,26 @@
 Modeling the PCA Shutoff App
 ############################
 
-AADL
 
-real-time, embedded systems with analysis capabilities.
-hirearchy of systems
+AADL = real-time, embedded systems with analysis capabilities.
+hierarchy of systems
 
 
-Components:
-Application
-Devices
-Requirements
+System Model Categories
+***********************
 
 Subsections decompose the system into five classes of models...
+
+
+Medical App
+===========
+
+Generated File Types
+--------------------
+
+
+Medical Devices
+===============
 
 Requirements
 
@@ -35,7 +43,7 @@ connected to. This package contains only requirements concerning a pulse ox.
 
 
 Generated File Types
-********************
+--------------------
 
 * Device interfaces
 * Requirement matching XML
@@ -100,17 +108,16 @@ Structure and Rationale
 
 
 Port Payload Types
-******************
+==================
 
 Requirements (XML)
-******************
+==================
 
 Eclipse Project File
-********************
+====================
 
-
-
-Medical Device Interfaces    
+Medical device interfaces    
 -------------------------
+
 Existence of pump with stop action, SpO2, EtCO2, respiration rate measures.
 Pseudo devices
