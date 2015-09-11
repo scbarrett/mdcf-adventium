@@ -17,11 +17,11 @@ Welcome to documentation for the MDCF PCA Shutoff App
 The PCA Shutoff App
 *******************
 Running on a medical application platform (**MAP**), the PCA shutoff application
-configures an interoperable system of medical devices to ensure that a patient
-controlled analgesia infusion pump *cannot* deliver an overdose of narcotic. 
-Should the system's monitoring devices detect inappropriate physiological 
-responses in its patient, the **app** will shut the PCA pump down, thereby 
-preventing further delivery of narcotic.
+configures an interoperable system of medical devices to ensure that the 
+system's patient controlled analgesia infusion pump *cannot* deliver an overdose 
+of narcotic. Should the system's monitoring devices detect inappropriate
+physiological responses in their patient, the **app** will shut the PCA pump 
+down, thereby preventing further delivery of narcotic.
 
 
 Contents:

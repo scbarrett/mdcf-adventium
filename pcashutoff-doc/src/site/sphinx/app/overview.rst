@@ -18,7 +18,7 @@ which it would be shut off...
 
 The System as a Control Loop
 ****************************
-In anticipation of supporting STPA hazards analysis, we break out system 
+In anticipation of supporting |STPA| hazards analysis, we break out system 
 components in terms of a classic, closed control loop...
 
 Controller & Process Model
@@ -30,8 +30,8 @@ App control & display
 Actuator
 ========
 
-PCA stop port
--------------
+PCA command port
+----------------
 
 Controlled Process
 ==================

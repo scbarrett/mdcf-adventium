@@ -3,52 +3,48 @@
 
 Modeling the PCA Shutoff App
 ############################
-
-
-AADL = real-time, embedded systems with analysis capabilities.
-hierarchy of systems
+The architectural analysis and design language (|AADL|) is used for modeling 
+real-time, embedded systems in a component and connector architectural style as
+a hierarchy of components. The language brings with it a number of analysis 
+capabilities...
 
 
 System Model Categories
 ***********************
-
-Subsections decompose the system into five classes of models...
-
-
-Medical App
-===========
-
-Generated File Types
---------------------
+The models that specify the app configured system can be divided into two broad 
+classes: those that describe the app itself, and those that model the devices 
+it interacts with to accomplish its goals. 
 
 
-Medical Devices
-===============
+Medical App Models
+==================
 
-Requirements
-
-App is looking to exchange SpO2, EtCO2, pulse rate and respiration rate 
-physiological metrics with the devices it is connected to. This package
-contains requirements for pulse ox, capnography and PCA pump devices.
-
-App is looking to exchange EtCO2 and respiration rate physiological metrics 
-with a device it can connected to. This package contains only requirements 
-concerning a capnography device.
-
-App is looking to be able to shut down the PCA pump if need be. This package 
-contains only requirements concerning a PCA pump. 
-
-App is looking to exchange SpO2 physiological metric with a device it can 
-connected to. This package contains only requirements concerning a pulse ox.
-
-
-Generated File Types
---------------------
-
+File Types
+----------
 * Device interfaces
-* Requirement matching XML
+
+Generated File Types
+--------------------
 * Port payload types
 * Eclipse project file
+* Requirement matching XML
+
+
+Medical Device Models
+=====================
+The *Shutoff App* system obviously needs a PCA pump to control. The only 
+capability beyond normal functionality it is required to possess, is a command
+port through which a signal may shut it off.
+
+In addition to the pump, the app requires these measures of patient 
+physiological parameters: SpO2, EtCO2 and respiration rate. In the demo 
+implementation of the *end-to-end scenario*, the first requirement is satisfied 
+by a pulse oximeter device, and the remainder by a capnography device.
+
+
+File Types
+----------
+* Devices
 
 
 Medical Device Interfaces
