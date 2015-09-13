@@ -27,7 +27,7 @@ down, thereby preventing further delivery of narcotic.
 Contents:
 *********
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 3
 
    app/overview
    aadl/models

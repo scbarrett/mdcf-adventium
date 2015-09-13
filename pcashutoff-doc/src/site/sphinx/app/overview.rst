@@ -13,7 +13,7 @@ patient pain.
 PCA Usage and Shutoff
 *********************
 Describe how the pump is used in normal operation, and the conditions under
-which it would be shut off...  
+which it would be shut off... (Scenario??)
 
 
 The System as a Control Loop
@@ -23,24 +23,16 @@ components in terms of a classic, closed control loop...
 
 Controller & Process Model
 ==========================
-
-App control & display
------------------------
+* App control & display
 
 Actuator
 ========
-
-PCA command port
-----------------
+* PCA command port
 
 Controlled Process
 ==================
-
-PCA pump
---------
+* PCA pump
 
 Sensors
 =======
-
-Monitoring devices
-------------------
+* Monitoring devices

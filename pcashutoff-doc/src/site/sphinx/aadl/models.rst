@@ -3,21 +3,37 @@
 
 Modeling the PCA Shutoff App
 ############################
-The architectural analysis and design language (|AADL|) is used for modeling 
-real-time, embedded systems in a component and connector architectural style as
-a hierarchy of components. The language brings with it a number of analysis 
-capabilities...
+The system for overseeing, and possibly shutting down, operation of a PCA
+infusion pump in a clinical setting is configured by a medical software 
+application. The **app** interfaces with three medical devices: a PCA pump, a 
+pulse oximeter, a capnography. The AADL models for these four components are
+described in this section.
 
+The architectural analysis and design language (|AADL|) models real-time, 
+embedded systems as a hierarchy of components using a component and connector 
+architectural style. The language supports the specification of data, control, 
+and error flows, as well as both discrete and continuous behaviors. 
 
-System Model Categories
-***********************
+It brings with it a number of analysis capabilities...
+
+system can be divided into two broad 
+classes: those that describe the app itself, and those that model the devices 
+it interacts with to accomplish its goals. 
+
 The models that specify the app configured system can be divided into two broad 
 classes: those that describe the app itself, and those that model the devices 
 it interacts with to accomplish its goals. 
 
+The *PCA Shutoff App* is comprised of two software components interfacing with
+three medical devices: a PCA pump, a pulse oximeter, a capnography.
+
 
 Medical App Models
-==================
+******************
+
+requirements 
+
+
 
 File Types
 ----------
@@ -28,10 +44,16 @@ Generated File Types
 * Port payload types
 * Eclipse project file
 * Requirement matching XML
+(App doesn't interface correctly with generated models??)  
 
 
 Medical Device Models
-=====================
+*********************
+Strictly speaking, needs the interfaces...
+(App requirements and device matching??)
+
+(Generated files??)
+
 The *Shutoff App* system obviously needs a PCA pump to control. The only 
 capability beyond normal functionality it is required to possess, is a command
 port through which a signal may shut it off.
