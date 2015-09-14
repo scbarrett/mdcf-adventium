@@ -5,9 +5,13 @@ Modeling the PCA Shutoff App
 ############################
 The system for overseeing, and possibly shutting down operation of a PCA
 infusion pump in a clinical setting is configured by a medical software 
-application. This **app** interfaces with three medical devices: a PCA pump, a 
-pulse oximeter, and a capnography. The AADL models that specify these four 
-components are described in this section.
+application. This **app** interfaces with three *pseudo* medical devices: a PCA 
+pump, a pulse oximeter, and a capnography. The AADL models that specify all 
+these components are described in this section.
+
+.. image:: images/app-aadl-instance.png
+    :alt: Instantiation of **app** AADL model 
+    :align: center
 
 The architectural analysis and design language (|AADL|) models real-time, 
 embedded systems as a hierarchy of components with a component and connector 
@@ -24,6 +28,8 @@ elaborate on each.
 
 Medical App Models
 ******************
+.. top level model
+
 
 requirements 
 
