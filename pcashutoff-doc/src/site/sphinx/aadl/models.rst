@@ -3,29 +3,23 @@
 
 Modeling the PCA Shutoff App
 ############################
-The system for overseeing, and possibly shutting down, operation of a PCA
+The system for overseeing, and possibly shutting down operation of a PCA
 infusion pump in a clinical setting is configured by a medical software 
-application. The **app** interfaces with three medical devices: a PCA pump, a 
-pulse oximeter, a capnography. The AADL models for these four components are
-described in this section.
+application. This **app** interfaces with three medical devices: a PCA pump, a 
+pulse oximeter, and a capnography. The AADL models that specify these four 
+components are described in this section.
 
 The architectural analysis and design language (|AADL|) models real-time, 
-embedded systems as a hierarchy of components using a component and connector 
+embedded systems as a hierarchy of components with a component and connector 
 architectural style. The language supports the specification of data, control, 
-and error flows, as well as both discrete and continuous behaviors. 
+and error flows, as well as both discrete and continuous behaviors. AADL and
+its extending **annexes** bring with them model analysis and simulation 
+capabilities.
 
-It brings with it a number of analysis capabilities...
-
-system can be divided into two broad 
-classes: those that describe the app itself, and those that model the devices 
-it interacts with to accomplish its goals. 
-
-The models that specify the app configured system can be divided into two broad 
-classes: those that describe the app itself, and those that model the devices 
-it interacts with to accomplish its goals. 
-
-The *PCA Shutoff App* is comprised of two software components interfacing with
-three medical devices: a PCA pump, a pulse oximeter, a capnography.
+The models that specify the app configured shut-off system can be divided into 
+two broad classes: those that describe the app itself, and those that model the 
+devices it interacts with to accomplish its goals. The following subsections
+elaborate on each.
 
 
 Medical App Models
@@ -34,17 +28,16 @@ Medical App Models
 requirements 
 
 
+**File Types**
 
-File Types
-----------
 * Device interfaces
 
-Generated File Types
---------------------
+
+**Generated File Types**
+
 * Port payload types
 * Eclipse project file
-* Requirement matching XML
-(App doesn't interface correctly with generated models??)  
+* Requirement matching XML (App doesn't interface correctly with generated models??)  
 
 
 Medical Device Models
@@ -64,8 +57,8 @@ implementation of the *end-to-end scenario*, the first requirement is satisfied
 by a pulse oximeter device, and the remainder by a capnography device.
 
 
-File Types
-----------
+**File Types**
+
 * Devices
 
 
@@ -76,18 +69,16 @@ Medical Device Interfaces
 Medical Application AADL
 ************************
 
-logic.aadl ?
-============
+logic.aadl?
+===========
 
-Structure and Rationale
------------------------
+**Structure and Rationale**
 
 
-display.aadl ?
-==============
+display.aadl?
+=============
 
-Structure and Rationale
------------------------
+**Structure and Rationale**
 
 
 Medical Device AADL
@@ -101,28 +92,25 @@ Medical App Requirements AADL
 PCAShutoffApp.aadl
 ==================
 
-Structure and Rationale
------------------------
+**Structure and Rationale**
 
 
 PCAShutoffApp_pulseox.aadl
 ==========================
 
-Structure and Rationale
------------------------
+**Structure and Rationale**
 
 
 PCAShutoffApp_capnog.aadl
 =========================
 
-Structure and Rationale
------------------------
+**Structure and Rationale**
+
 
 PCAShutoffApp_pcapump.aadl
 ==========================
 
-Structure and Rationale
------------------------
+**Structure and Rationale**
 
 
 Port Payload Types
@@ -134,8 +122,7 @@ Requirements (XML)
 Eclipse Project File
 ====================
 
-Medical device interfaces    
--------------------------
+**Medical device interfaces**    
 
 Existence of pump with stop action, SpO2, EtCO2, respiration rate measures.
 Pseudo devices
