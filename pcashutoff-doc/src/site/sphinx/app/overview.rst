@@ -3,6 +3,11 @@
 
 Overview of the PCA Shutoff App
 ###############################
+.. image:: images/system-context.png
+    :alt: TBD 
+    :align: center
+
+
 The integrated system as specified by the *PCA Shuttoff Application* is hosted 
 on the |MDCF| medical application platform (**MAP**). The **app** and its 
 medical devices interact through the transparent middleware of the platform in 
@@ -23,7 +28,7 @@ which it would be shut off... (Reference the scenario??)
 
 
 The System as a Control Loop
-****************************
+----------------------------
 .. Control loop diagram
 .. Goals of subsystems and ensuring safety
 
