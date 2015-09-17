@@ -9,7 +9,7 @@ application. This **app** interfaces with three *pseudo* medical devices: a PCA
 pump, a pulse oximeter, and a capnography. The AADL models that specify all 
 these components are described in this section.
 
-.. image:: images/app-aadl-instance.png
+.. image:: images/system-aadl.png
     :alt: Instantiation of **app** AADL model 
     :align: center
 
@@ -28,7 +28,17 @@ elaborate on each.
 
 Medical App Models
 ******************
+.. image:: images/app-comps&props(type).png
+    :alt: Declaration of **app** 
+    :align: center
+
+.. image:: images/app-comps&props(inst).png
+    :alt: Instantiation of **app** 
+    :align: center
+
+
 .. top level model
+
 
 
 requirements 

@@ -9,8 +9,12 @@ medical devices interact through the transparent middleware of the platform in
 order to run, monitor, and in extreme cases, shut down a PCA pump being used by 
 a patient for pain relief.
 
-.. System diagram
+.. image:: images/app-device-loop.png
+    :alt: Loop of **app** to device control 
+    :align: center
+
 .. Why relevant, why this example?
+
 
 PCA Usage and Shutoff
 *********************

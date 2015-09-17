@@ -24,6 +24,10 @@ inappropriate physiological responses in the patient under treatment, the
 **app** will shut the PCA pump down, thereby preventing further delivery of 
 narcotic.
 
+.. image:: images/system-overview.png
+    :alt: Loop of **app** to device control 
+    :align: center
+
 
 Contents:
 *********
