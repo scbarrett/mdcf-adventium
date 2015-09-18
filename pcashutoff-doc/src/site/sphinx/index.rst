@@ -14,19 +14,19 @@ Welcome to documentation for the MDCF PCA Shutoff App
 :last updated: |today| (`changes <https://github.com/scbarrett/mdcf-adventium/commits/master>`_)
 
 
-The PCA Infusion Monitoring Safety Interlock System
-***************************************************
-A Patient Controlled Analgesia (PCA) infusion pump is used for the on-demand, 
-infused delivery of a pain relieving opioid to a patient in a clinical setting. 
-Safety concerns over misuse or overdosing motivate this specification of a
-system for monitoring PCA pump operation, and, if need be, shutting the pump off
-by way of an interlock mechanism.
+A PCA Infusion System with Safety Monitoring and Interlock
+**********************************************************
+A Patient Controlled Analgesia (PCA) infusion pump is a medical device used in a 
+clinical setting for the on-demand, infused delivery of a pain relieving opioid 
+to a patient. Safety concerns over misuse and the possibility of overdosing
+motivate this specification of a system for monitoring PCA pump operation, and, 
+if need be, shutting the pump off by way of an interlock mechanism.
 
-Such a system provides a clinician wanting to use a PCA pump for patient pain
-relief with a central point for issuing commands and gathering feedback. The 
-system continuously acquires and analyzes patient physiological parameters so as
-to detect any sign of deteriorating respiratory health that may indicate an 
-overdose situation.
+Such a system provides clinicians wanting to use a PCA pump for patient pain
+relief with a central point for issuing commands and gathering feedback. Once 
+attached, the system would continuously acquire and analyze patient physiological 
+parameters so as to detect any sign of deteriorating respiratory health that
+could indicate an overdose situation.
 
 
 The PCA Shutoff Application
