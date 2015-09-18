@@ -23,40 +23,44 @@ possibility of overdose motivate this specification of a system for monitoring
 PCA pump operation, and, if need be, shutting the pump off by way of an 
 interlock mechanism.
 
-Such a system provides clinicians wanting to use a PCA pump for patient pain
-relief with a central point for issuing commands and gathering feedback. Once 
-attached, the system would continuously acquire and analyze patient physiological 
-parameters so as to detect any sign of deteriorating respiratory health that
-could indicate an overdose situation.
+Such a system would provide clinicians wanting to use a PCA pump for patient
+pain relief with a central point for issuing commands and gathering feedback.
+Once attached, the system would continuously acquire and analyze patient
+physiological parameters so as to detect any sign of deteriorating respiratory 
+health that could indicate an overdose situation.
 
 
-The PCA Shutoff Application
-===========================
-App is an integration specification by which the system is configured.
+Interoperable Clinical System Development 
+=========================================
+The construction of a simplified version of the PCA Monitoring and Safety 
+Interlock System along with automated tools to support its development has been 
+undertaken by the SAnToS group at Kansas State University. The goal is to 
+realize the end-to-end development of an interoperable system of medical devices 
+involving a PCA pump, which the system is capable of shutting off.
 
-Running on a medical application platform (**MAP**), the *PCA Shutoff 
-Application* specifies an interoperable system of medical devices to ensure 
-that the system's patient controlled analgesia (PCA) infusion pump will not 
-deliver an overdose of narcotic. Should the system's monitoring devices detect
-inappropriate physiological responses in the patient under treatment, the
-**app** will shut the PCA pump down, thereby preventing further delivery of 
-narcotic.
+This so-called, *PCA Shut-off App* scenario is based on the Integrated Clinical 
+Environment (ICE) functional model. In the scenario, an ICE compliant 
+application, or **app**, running on an reusable ICE Manager infrastructure 
+component specifies the configuration of an integrated system comprised of ICE
+compliant medical devices. An overview appears below. 
 
 .. image:: images/system-overview.png
     :alt: TBD
     :align: center
 
-
-This system is implemented as an integrated clinical system based on the
-Integrated Clinical Environment (ICE) functional model. The system consists of 
-an ICE App running on an reusable ICE Manager infrastructure component.
+At the heart of the system is the shut-off app. This is because it is *this*
+component that specifies just what capabilities the resulting integrated system 
+must have. The outcome of its specification can be seen, aligned at the bottom
+of the diagram, in the various controlled and monitoring devices involved in the 
+shut-off scenario. A supervising UI internal to the app that permits interaction
+with the clinician completes the system.
 
 Contents:
 *********
 .. toctree::
    :maxdepth: 3
 
-   app/overview
+   app/shutoff
    aadl/models
 
 
