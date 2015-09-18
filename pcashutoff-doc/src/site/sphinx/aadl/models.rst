@@ -9,9 +9,11 @@ application. This **app** interfaces with three *pseudo* medical devices: a PCA
 pump, a pulse oximeter, and a capnography. The AADL models that specify all 
 these components are described in this section.
 
-.. image:: images/system-aadl.png
+.. figure:: images/system-aadl.png
     :alt: Instantiation of **app** AADL model 
     :align: center
+    
+    Caption
 
 The architectural analysis and design language (|AADL|) models real-time, 
 embedded systems as a hierarchy of components with a component and connector 
@@ -28,14 +30,19 @@ elaborate on each.
 
 Medical App Models
 ******************
-.. image:: images/app-comps&props(type).png
-    :alt: Declaration of **app** 
+.. figure:: images/app-comps&props(type).png
+    :alt: Declaration of app 
     :align: center
 
-.. image:: images/app-comps&props(inst).png
-    :alt: Instantiation of **app** 
+    Caption
+    
+    
+.. figure:: images/app-comps&props(inst).png
+    :alt: Instantiation of app 
     :align: center
 
+    Caption
+    
 
 .. top level model
 

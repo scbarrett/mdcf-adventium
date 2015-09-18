@@ -44,9 +44,11 @@ application, or **app**, running on an reusable ICE Manager infrastructure
 component specifies the configuration of an integrated system comprised of ICE
 compliant medical devices. An overview appears below. 
 
-.. image:: images/system-overview.png
-    :alt: TBD
+.. figure:: images/system-overview.png
+    :alt: App specified system
     :align: center
+
+    The Shut-off App Specified Integrated Clinical System
 
 At the heart of the system is the shut-off app. This is because it is *this*
 component that specifies just what capabilities the resulting integrated system 
@@ -54,6 +56,7 @@ must have. The outcome of its specification can be seen, aligned at the bottom
 of the diagram, in the various controlled and monitoring devices involved in the 
 shut-off scenario. A supervising UI internal to the app that permits interaction
 with the clinician completes the system.
+
 
 Contents:
 *********
