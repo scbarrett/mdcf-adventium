@@ -18,9 +18,10 @@ A PCA Infusion System with Safety Monitoring and Interlock
 **********************************************************
 A Patient Controlled Analgesia (PCA) infusion pump is a medical device used in a 
 clinical setting for the on-demand, infused delivery of a pain relieving opioid 
-to a patient. Safety concerns over misuse and the possibility of overdosing
-motivate this specification of a system for monitoring PCA pump operation, and, 
-if need be, shutting the pump off by way of an interlock mechanism.
+to a patient. Security concerns over misuse, and safety concerns over the 
+possibility of overdose motivate this specification of a system for monitoring 
+PCA pump operation, and, if need be, shutting the pump off by way of an 
+interlock mechanism.
 
 Such a system provides clinicians wanting to use a PCA pump for patient pain
 relief with a central point for issuing commands and gathering feedback. Once 
