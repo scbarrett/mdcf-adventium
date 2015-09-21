@@ -39,7 +39,7 @@ realize the end-to-end development of an interoperable system of medical devices
 involving a PCA pump, which the system is capable of shutting off.
 
 This so-called, *PCA Shut-off App* scenario is based on the Integrated Clinical 
-Environment (ICE) functional model. In the scenario, an ICE compliant 
+Environment (|ICE|) functional model. In the scenario, an ICE compliant 
 application, or **app**, running on an reusable ICE Manager infrastructure 
 component specifies the configuration of an integrated system comprised of ICE
 compliant medical devices. An overview appears below. 
