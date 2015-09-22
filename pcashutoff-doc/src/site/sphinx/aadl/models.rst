@@ -1,18 +1,33 @@
 .. include:: ../util/substitution.rst
 
 
-Modeling the PCA Shutoff App
-############################
-Introduction...
+Modeling the PCA Infusion System
+################################
+Models are a powerful way of designing a system, and, by giving the big picture,
+of conveying its structure. If expressive enough, a modeling language can also
+provide a means of performing analyzes. |AADL|, the Architectural Analysis and 
+Design Language, is expressive and precise enough for such tasks. This section 
+explores existing AADL models of the PCA Infusion System.
 
 
 The System and its Components 
 *****************************
+AADL uses a component-and-connector viewtype (C&C) for representing 
+architectures. As such, it presents a system as a hierarchy of components that 
+express runtime behavior; wherein a component is one of the principle
+processing units of the executing system, and a connector is a mechanism by 
+which components interact.
+
 .. figure:: images/app-comps&props(type).png
     :alt: Declaration of app 
     :align: center
 
-    Caption
+    Components and Connectors of the PCA Infusion System
+    
+Above can be seen five component blocks that are connected with communication 
+links over which they can interact. The yellow labels give an idea of the
+intended purpose for each box and their connections. The notion of
+characterizing each element with properties is also alluded to. 
     
 .. The system for overseeing, and possibly shutting down operation of a PCA
 .. infusion pump in a clinical setting is configured by a medical software 
