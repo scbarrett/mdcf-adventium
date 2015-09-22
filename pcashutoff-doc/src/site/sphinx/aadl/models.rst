@@ -10,7 +10,7 @@ Analysis and Design Language, is expressive and precise enough: AADL and its
 extending **annexes**  bring with them model analysis and simulation 
 capabilities.
 
-AADL is intended specifically for modeling real-time, embedded systems. The
+AADL is meant specifically for modeling real-time, embedded systems. The
 language supports the specification of data, control, and error flows, as well
 as both discrete and continuous behaviors. This section 
 explores the existing AADL models of the PCA Infusion System.
@@ -32,32 +32,38 @@ which components interact.
     
 Above can be seen five component blocks that are connected with communication 
 links over which they can interact. The yellow labels give an idea of the
-purpose for each box and their connections. The notion of characterizing each 
-element with properties is also alluded to. 
+intended purpose of the boxes and their connections. The notion of
+characterizing elements with properties is also alluded to. 
+
     
-.. The system for overseeing, and possibly shutting down operation of a PCA
-.. infusion pump in a clinical setting is configured by a medical software 
-.. application. This **app** interfaces with three *pseudo* medical devices: a PCA 
-.. pump, a pulse oximeter, and a capnography. The AADL models that specify all 
-.. these components are described in this section.
-
-
 The System Expressed in AADL
 ****************************
-AADL refines boxes as categories/classifiers...
+Here, the ambiguous boxes and arrows of the preceding diagram have now been 
+typed with AADL categories /
+classifiers??, to give them meaningful semantics and concrete properties.
 
 .. figure:: images/app-comps&props(inst).png
     :alt: Instantiation of app 
     :align: center
 
-    Caption
+    Typed  & Characterized Elements of the PCA Infusion System
     
+The two system software components have been identified as **processes** (i.e., 
+unique address spaces in memory), which by AADL semantics may contain 
+**threads** of sequentially executing code. The threads are shown communicating
+between processes, and with **devices**.
+
+.. Aren't real devices, just i/f. Aren't even real i/fs!
+
+.. The models that specify the app configured shut-off system can be divided into 
+.. two broad classes: those that describe the app itself, and those that model the 
+.. devices it interacts with to accomplish its goals. The following subsections
+.. elaborate on each.
 
 
-The models that specify the app configured shut-off system can be divided into 
-two broad classes: those that describe the app itself, and those that model the 
-devices it interacts with to accomplish its goals. The following subsections
-elaborate on each.
+.. This **app** interfaces with three *pseudo* medical devices: a PCA 
+.. pump, a pulse oximeter, and a capnography. The AADL models that specify all 
+.. these components are described in this section.
 
 
 Medical App Models
