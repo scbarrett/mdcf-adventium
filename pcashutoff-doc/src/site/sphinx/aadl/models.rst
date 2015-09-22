@@ -4,10 +4,16 @@
 Modeling the PCA Infusion System
 ################################
 Models are a powerful way of designing a system, and, by giving the big picture,
-of conveying its structure. If expressive enough, a modeling language can also
-provide a means of performing analyzes. |AADL|, the Architectural Analysis and 
-Design Language, is expressive and precise enough for such tasks. This section 
-explores existing AADL models of the PCA Infusion System.
+of conveying its structure. An expressive modeling language can also provide
+means for analyzing the system as its design evolves. |AADL|, the Architectural 
+Analysis and Design Language, is expressive and precise enough: AADL and its
+extending **annexes**  bring with them model analysis and simulation 
+capabilities.
+
+AADL is intended specifically for modeling real-time, embedded systems. The
+language supports the specification of data, control, and error flows, as well
+as both discrete and continuous behaviors. This section 
+explores the existing AADL models of the PCA Infusion System.
 
 
 The System and its Components 
@@ -22,12 +28,12 @@ which components interact.
     :alt: Declaration of app 
     :align: center
 
-    Components and Connectors of the PCA Infusion System
+    Components and Connector Structure of the PCA Infusion System
     
 Above can be seen five component blocks that are connected with communication 
 links over which they can interact. The yellow labels give an idea of the
-intended purpose for each box and their connections. The notion of
-characterizing each element with properties is also alluded to. 
+purpose for each box and their connections. The notion of characterizing each 
+element with properties is also alluded to. 
     
 .. The system for overseeing, and possibly shutting down operation of a PCA
 .. infusion pump in a clinical setting is configured by a medical software 
@@ -38,18 +44,14 @@ characterizing each element with properties is also alluded to.
 
 The System Expressed in AADL
 ****************************
+AADL refines boxes as categories/classifiers...
+
 .. figure:: images/app-comps&props(inst).png
     :alt: Instantiation of app 
     :align: center
 
     Caption
     
-The architectural analysis and design language (|AADL|) models real-time, 
-embedded systems as a hierarchy of components with a component and connector 
-architectural style. The language supports the specification of data, control, 
-and error flows, as well as both discrete and continuous behaviors. AADL and
-its extending **annexes** bring with them model analysis and simulation 
-capabilities.
 
 
 The models that specify the app configured shut-off system can be divided into 
