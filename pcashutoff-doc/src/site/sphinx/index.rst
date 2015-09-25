@@ -1,4 +1,4 @@
-.. MDCF PCA Shutoff App documentation master file, created by
+.. MDCF PCA Shut-off App documentation master file, created by
    sphinx-quickstart on Tue Sep  1 14:24:42 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -6,8 +6,8 @@
 .. include:: util/substitution.rst
 
 
-Welcome to documentation for the MDCF PCA Shutoff App
-#####################################################
+Welcome to documentation for the MDCF PCA Shut-off App
+######################################################
 :author:       `Steve Barrett <http://people.cis.ksu.edu/~scbarrett>`_
 :contact:      scbarrett@ksu.edu
 :organization: `SAnToS Laboratory <http://santoslab.org>`_, `Kansas State University <http://k-state.edu>`_
@@ -76,7 +76,7 @@ Contents:
 
 .. admonition:: Acknowledgements
    
-   The development of the |PCA Shutoff| is supported in part by ??
+   The development of the |PCA Shut-off| is supported in part by ??
     
    Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the previously mentioned institutions.
 
