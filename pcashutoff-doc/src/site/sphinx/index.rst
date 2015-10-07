@@ -3,6 +3,7 @@
    Adapt as desired, but keep the root `toctree` directive.
 
 .. include:: util/substitution.rst
+.. _home_page:
 
 
 ##########################################
@@ -66,6 +67,7 @@ Contents:
 
    app/shutoff
    aadl/models
+   comm/patterns
 
 
 ..

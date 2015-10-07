@@ -1,4 +1,5 @@
 .. include:: ../util/substitution.rst
+.. _shutoff_app:
 
 
 ###########################
@@ -6,13 +7,13 @@ The PCA Shutoff Application
 ###########################
 The Integrated Clinical Environment is architected to be a "system of systems" 
 of which the PCA Shutoff App is but one of many possible hosted systems. As a
-program running on the 
-|ICE| Supervisor---a reusable infrastructure component of the ICE---the App can
-designate its needs and have the Supervisor pull together an *interoperable* 
-system of medical devices for its use, instead of having to cobble together an 
-ad hoc network of stand-alone devices on its own. By doing so, the App also gains input and 
-output functionality through the Supervisor's user interface (SUI), and access 
-to the ICE communication channels via transparent middleware.     
+program running on the |ICE| Supervisor---a reusable infrastructure component 
+of the ICE---the App can designate its needs and have the Supervisor pull 
+together an *interoperable* system of medical devices for its use, instead of 
+having to cobble together an ad hoc network of stand-alone devices on its own. 
+By doing so, the App also gains input and output functionality through the 
+Supervisor's user interface (SUI), and access to the ICE communication channels 
+via transparent middleware.     
 
 .. Why relevant, why this example?
 
@@ -99,7 +100,8 @@ out of this context leads to the block diagram pictured here.
 
 Each block is discussed in the subsections that follow, starting from the top
 and proceeding around the loop in a counter-clockwise direction.
- 
+
+
 Controller & Process Model
 --------------------------
 The app functions as the *controller* for this loop: making decisions and 
@@ -111,6 +113,7 @@ the state of the system, and maintaining a memory of patient physiological
 metrics from which respiratory health trends may be calculated. The app makes 
 various views of its process model available on the SUI display.    
 
+
 Actuator
 --------
 To effect its goals, the app exercises control over the PCA pump by enabling or
@@ -119,9 +122,11 @@ to the pump through a command port. Thus, the PCA pump, responding to commands
 it receives from the app, acts as the actuator for the system, regulating the
 amount of drug that can flow in the system. 
 
+
 Controlled Process
 ------------------
 * patient
+
 
 Sensors
 -------

@@ -1,4 +1,5 @@
 .. include:: ../util/substitution.rst
+.. _aadl_models:
 
 
 ################################
@@ -32,7 +33,7 @@ through its use of *containment*.
 
     Structure of the PCA Infusion System
     
-Above can be seen five component blocks either contained by, or attached to
+Above can be seen five component blocks either contained by, or attached to,
 other components with communication links over which they can interact. The
 yellow labels give an idea of the intended purpose of the boxes and their
 connections. They also allude to the notion of characterizing elements with
@@ -56,39 +57,44 @@ is, as memory address spaces representing compiled code and data that are
 protected at runtime. **Processes**, **threads**, and **data** are the principle
 runtime software abstractions in AADL. Note that our design does not yet need
 to concern itself with platform issues, so no system **memory** or
-**processors** have been defined, leaving the PCA Infusion System's software 
-components *unbound*.
+**processors** have been defined, leaving the software 
+components of the PCA Infusion System *unbound*.
 
-The functionality and responsibilities required of the processes have been 
-partitioned into thread **subcomponents**: three in the *logic process*, and two 
-in the *display process*. A thread represents a sequence of executing code. 
-Here, the threads are shown as communicating between the processes, and with 
-devices.
+The functionality and responsibilities to be carried out by the processes have 
+been partitioned into thread **subcomponents**: three in the *logic process*, 
+and two in the *display process*. A thread represents a sequence of executing 
+code. Here, the threads are shown communicating between the processes, and 
+with devices.
 
 A **device** in AADL is a simple or complex abstraction of either an internal
 or external component. They consist of only those characteristics necessary for
-analysis and unambiguous representation. Such is the case with the devices of
+unambiguous representation and analysis. Such is the case with the devices of
 the typed system diagram: instead of modeling actual medical devices, they 
-specify only the interface of those devices the App is expecting to work with.
+specify only the interfaces of those devices the App is expecting to work with.
 Further, the interfaces do not even have to correspond to real device
-interfaces. In order to satisfy the App requirements, the ICE platform is
-allowed to connect, through its middleware, to any number of available devices.
+interfaces. The ICE platform is allowed to connect through its middleware, any
+number of available devices that when combined, satisfy the App requirements. 
 In this sense, the pictured device components are better thought of as *pseudo
 devices*.
 
 That being said, the system must, at some point, interact with *real* medical
-devices; these too, can be modeled with AADL as component hierarchies. The 
-upshot is that the PCA Infusion System is comprised of two broad types of
-models: those that describe the app itself, and those that represent the devices
-it needs to accomplish its goals. The following subsections elaborate on each
-type.
+devices; these too, can be modeled as component hierarchies with AADL. The 
+upshot is that the AADL representation of the PCA Infusion System is comprised
+of two broad types of models: those that describe the app itself, and those that
+describe the devices it needs to use in order to accomplish its goals. Models of
+each type are elaborated on in the subsections that follow.
 
 
-The Medical App AADL Model
-==========================
-The Shutoff App interfaces with three *pseudo* medical devices: a PCA pump, a 
-pulse oximeter, and a capnography. The AADL models that specify all these 
-components are described in this section.
+Modeling the Medical App
+========================
+A graphical layout for components of the PCA Infusion System created in the
+open-source AADL tool platform, |OSATE2| is depicted below. The model is 
+constructed from the PCA Shutoff App's point of view, basically looking outward 
+from inside the App. Thus, the App "sees" the three *pseudo* medical devices
+it is expecting to work with: a PCA pump, a pulse oximeter, and a capnography.
+Whether it actually gets those specific devices is immaterial, what matters is
+that whatever combination of devices it *does* get provide the expected services
+through the expected interfaces.
 
 .. figure:: images/system-aadl.png
     :alt: Instantiation of **app** AADL model 
@@ -97,22 +103,55 @@ components are described in this section.
     PCA Infusion System from Point of View of the Shutoff App 
 
 
-
+Software Subcomponents
+----------------------
 
 PCAShutoffApp.aadl
-------------------
-**Structure and Rationale**
+^^^^^^^^^^^^^^^^^^
+* Structure and Rationale
 
-logic.aadl
-^^^^^^^^^^
+.. logic.aadl
+.. ^^^^^^^^^^
 
-display.aadl
-^^^^^^^^^^^^
+.. display.aadl
+.. ^^^^^^^^^^^^
 
 
-Pseudo Medical Devices
-^^^^^^^^^^^^^^^^^^^^^^
-**Medical device interfaces**    
+Device Interfaces
+-----------------
+As designed, the three device interfaces the Shutoff App interacts with are
+modeled with three separate files. Though this does make explanation easier, 
+they go have as easily be combined into one file.
+
+
+PCAShutoffApp_spo2.aadl
+^^^^^^^^^^^^^^^^^^^^^^^
+The app needs to have access to the patient's peripheral capillary oxygen
+saturation (SpO\ :sub:`2`), which it presumes to come from a pulse oximeter
+device. The expected interface through which this physiological metric will be
+obtained is declared by this AADL package. 
+
+.. literalinclude:: snippets/PCAShutoffApp_spo2.aadl
+    :language: aadl
+
+See :ref:`comm_patterns`
+
+
+PCAShutoffApp_etco2.aadl
+-----------------------
+* Structure and Rationale
+
+
+PCAShutoffApp_pcastop.aadl
+-----------------------
+* Structure and Rationale
+
+
+Modeling the Medical Devices
+============================
+
+
+.. **Medical device interfaces**    
 
 
 .. **File Types**
@@ -127,8 +166,6 @@ Pseudo Medical Devices
 .. * Requirement matching XML (App doesn't interface correctly with generated models??)  
 
 
-Medical Device Models
-^^^^^^^^^^^^^^^^^^^^^
 .. Strictly speaking, needs the interfaces...
 .. (App requirements and device matching??)
 
@@ -147,26 +184,6 @@ Medical Device Models
 .. **File Types**
 
 .. * Devices
-
-
-PCAShutoffApp_spo2.aadl
-==========================
-**Structure and Rationale**
-
-.. literalinclude:: snippets/PCAShutoffApp_spo2.aadl
-    :language: aadl
-..    :linenos:
-
-
-
-PCAShutoffApp_etco2.aadl
-=========================
-**Structure and Rationale**
-
-
-PCAShutoffApp_pcastop.aadl
-==========================
-**Structure and Rationale**
 
 
 .. Port Payload Types
