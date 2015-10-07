@@ -1,0 +1,17 @@
+package PCAShutoffApp_pcapump
+public
+  with MAP_Properties;
+  with PCAShutoffApp_Types;
+
+device PCAShutoffApp_pcapump
+features
+  stop_act: in event port {
+    MAP_Properties::Exchange_Name => "stop_act";
+  };
+
+end PCAShutoffApp_pcapump;
+
+device implementation PCAShutoffApp_pcapump.impl
+end PCAShutoffApp_pcapump.impl;
+
+end PCAShutoffApp_pcapump;

@@ -1,9 +1,9 @@
-package PCAShutoffApp_spo2
+package PCAShutoffApp_pulseox
 public
   with MAP_Properties;
   with PCAShutoffApp_Types;
 
-device PCAShutoffApp_spo2
+device PCAShutoffApp_pulseox
 features
   spo2_get_out: out event data port PCAShutoffApp_Types::spo2 {
     MAP_Properties::Exchange_Name => "spo2_get";
@@ -16,9 +16,9 @@ features
     MAP_Properties::Exchange_Name => "spo2_per";
   };
 
-end PCAShutoffApp_spo2;
+end PCAShutoffApp_pulseox;
 
-device implementation PCAShutoffApp_spo2.impl
-end PCAShutoffApp_spo2.impl;
+device implementation PCAShutoffApp_pulseox.impl
+end PCAShutoffApp_pulseox.impl;
 
-end PCAShutoffApp_spo2;
+end PCAShutoffApp_pulseox;

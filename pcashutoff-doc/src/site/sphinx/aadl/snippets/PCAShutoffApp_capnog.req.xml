@@ -1,24 +1,29 @@
 <model>
   <declarations class="ilist">
-    <requirement name="mdcf.app.pcashutoff.PCAShutoffApp_spo2">
+    <requirement name="mdcf.app.pcashutoff.PCAShutoffApp_capnog">
       <members class="ilist">
-        <attribute name="spo2">
+        <attribute name="etco2">
           <annotations class="ilist"/>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_EtCo2_Numeric"/>
           <init class="none"></init>
         </attribute>
-        <attribute name="spo2_get">
-          <annotations class="ilist"/>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
-          <init class="none"></init>
-        </attribute>
-        <attribute name="spo2_per">
+        <attribute name="etco2_per">
           <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
-        <invariant name="req_spo2_get">
-          <predicateType class="namedType" name="mdcf.app.pcashutoff.PCAShutoffApp_spo2"/>
+        <attribute name="respire">
+          <annotations class="ilist"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_RespiratoryRate_Numeric"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="respire_per">
+          <annotations class="ilist"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="req_etco2_per">
+          <predicateType class="namedType" name="mdcf.app.pcashutoff.PCAShutoffApp_capnog"/>
           <predicate>
             <type class="none"></type>
             <param name="req">
@@ -26,7 +31,7 @@
             </param>
             <body class="matchExp">
               <type class="none"></type>
-              <exp class="accessExp" id="spo2">
+              <exp class="accessExp" id="etco2">
                 <type class="none"></type>
                 <exp class="varRefExp" id="req">
                   <type class="none"></type>
@@ -34,9 +39,9 @@
               </exp>
               <cases class="ilist">
                 <matchCase>
-                  <bind class="namedMatchCaseBind" id="spo2_ex">
+                  <bind class="namedMatchCaseBind" id="etco2_ex">
                     <type class="some">
-                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_EtCo2_Numeric"/>
                     </type>
                   </bind>
                   <cond class="none"></cond>
@@ -48,7 +53,7 @@
                         <type class="none"></type>
                         <exp class="accessExp" id="exchanges">
                           <type class="none"></type>
-                          <exp class="varRefExp" id="spo2_ex">
+                          <exp class="varRefExp" id="etco2_ex">
                             <type class="none"></type>
                           </exp>
                         </exp>
@@ -68,7 +73,7 @@
                           <matchCase>
                             <bind class="namedMatchCaseBind" id="exch">
                               <type class="some">
-                                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
                               </type>
                             </bind>
                             <cond class="none"></cond>
@@ -76,7 +81,7 @@
                               <type class="some">
                                 <reference class="namedType" name="any"/>
                               </type>
-                              <left class="accessExp" id="spo2_get">
+                              <left class="accessExp" id="etco2_per">
                                 <type class="none"></type>
                                 <exp class="varRefExp" id="req">
                                   <type class="none"></type>
@@ -110,8 +115,8 @@
             </body>
           </predicate>
         </invariant>
-        <invariant name="req_spo2_per">
-          <predicateType class="namedType" name="mdcf.app.pcashutoff.PCAShutoffApp_spo2"/>
+        <invariant name="req_respire_per">
+          <predicateType class="namedType" name="mdcf.app.pcashutoff.PCAShutoffApp_capnog"/>
           <predicate>
             <type class="none"></type>
             <param name="req">
@@ -119,7 +124,7 @@
             </param>
             <body class="matchExp">
               <type class="none"></type>
-              <exp class="accessExp" id="spo2">
+              <exp class="accessExp" id="respire">
                 <type class="none"></type>
                 <exp class="varRefExp" id="req">
                   <type class="none"></type>
@@ -127,9 +132,9 @@
               </exp>
               <cases class="ilist">
                 <matchCase>
-                  <bind class="namedMatchCaseBind" id="spo2_ex">
+                  <bind class="namedMatchCaseBind" id="respire_ex">
                     <type class="some">
-                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_RespiratoryRate_Numeric"/>
                     </type>
                   </bind>
                   <cond class="none"></cond>
@@ -141,7 +146,7 @@
                         <type class="none"></type>
                         <exp class="accessExp" id="exchanges">
                           <type class="none"></type>
-                          <exp class="varRefExp" id="spo2_ex">
+                          <exp class="varRefExp" id="respire_ex">
                             <type class="none"></type>
                           </exp>
                         </exp>
@@ -169,7 +174,7 @@
                               <type class="some">
                                 <reference class="namedType" name="any"/>
                               </type>
-                              <left class="accessExp" id="spo2_per">
+                              <left class="accessExp" id="respire_per">
                                 <type class="none"></type>
                                 <exp class="varRefExp" id="req">
                                   <type class="none"></type>
@@ -190,6 +195,13 @@
                         </cases>
                       </body>
                     </arg>
+                  </body>
+                </matchCase>
+                <matchCase>
+                  <bind class="defaultMatchCaseBindExp"/>
+                  <cond class="none"></cond>
+                  <body class="literalExp" value="false">
+                    <type class="none"></type>
                   </body>
                 </matchCase>
               </cases>

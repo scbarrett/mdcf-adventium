@@ -1,0 +1,111 @@
+<model>
+  <declarations class="ilist">
+    <requirement name="mdcf.app.pcashutoff.PCAShutoffApp_pcapump">
+      <members class="ilist">
+        <attribute name="stop">
+          <annotations class="ilist"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Stop_Action"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="stop_act">
+          <annotations class="ilist"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action_Exchange"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="req_stop_act">
+          <predicateType class="namedType" name="mdcf.app.pcashutoff.PCAShutoffApp_pcapump"/>
+          <predicate>
+            <type class="none"></type>
+            <param name="req">
+              <type class="none"></type>
+            </param>
+            <body class="matchExp">
+              <type class="none"></type>
+              <exp class="accessExp" id="stop">
+                <type class="none"></type>
+                <exp class="varRefExp" id="req">
+                  <type class="none"></type>
+                </exp>
+              </exp>
+              <cases class="ilist">
+                <matchCase>
+                  <bind class="namedMatchCaseBind" id="stop_ex">
+                    <type class="some">
+                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Stop_Action"/>
+                    </type>
+                  </bind>
+                  <cond class="none"></cond>
+                  <body class="applyExp">
+                    <type class="none"></type>
+                    <fun class="seqOpExp" id="exists">
+                      <type class="none"></type>
+                      <exp class="mapOpExp" id="values">
+                        <type class="none"></type>
+                        <exp class="accessExp" id="exchanges">
+                          <type class="none"></type>
+                          <exp class="varRefExp" id="stop_ex">
+                            <type class="none"></type>
+                          </exp>
+                        </exp>
+                      </exp>
+                    </fun>
+                    <arg class="funExp">
+                      <type class="none"></type>
+                      <param name="x$1">
+                        <type class="none"></type>
+                      </param>
+                      <body class="matchExp">
+                        <type class="none"></type>
+                        <exp class="varRefExp" id="x$1">
+                          <type class="none"></type>
+                        </exp>
+                        <cases class="ilist">
+                          <matchCase>
+                            <bind class="namedMatchCaseBind" id="exch">
+                              <type class="some">
+                                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action_Exchange"/>
+                              </type>
+                            </bind>
+                            <cond class="none"></cond>
+                            <body class="binaryBasicOpExp" op="==">
+                              <type class="some">
+                                <reference class="namedType" name="any"/>
+                              </type>
+                              <left class="accessExp" id="stop_act">
+                                <type class="none"></type>
+                                <exp class="varRefExp" id="req">
+                                  <type class="none"></type>
+                                </exp>
+                              </left>
+                              <right class="varRefExp" id="exch">
+                                <type class="none"></type>
+                              </right>
+                            </body>
+                          </matchCase>
+                          <matchCase>
+                            <bind class="defaultMatchCaseBindExp"/>
+                            <cond class="none"></cond>
+                            <body class="literalExp" value="false">
+                              <type class="none"></type>
+                            </body>
+                          </matchCase>
+                        </cases>
+                      </body>
+                    </arg>
+                  </body>
+                </matchCase>
+                <matchCase>
+                  <bind class="defaultMatchCaseBindExp"/>
+                  <cond class="none"></cond>
+                  <body class="literalExp" value="false">
+                    <type class="none"></type>
+                  </body>
+                </matchCase>
+              </cases>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
+  </declarations>
+</model>
