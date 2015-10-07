@@ -1,45 +1,49 @@
 .. include:: ../util/substitution.rst
 
 
+################################
 Modeling the PCA Infusion System
 ################################
-Models are a powerful way of designing a system, and conveying its structure. 
-An expressive modeling language can also provide means for analyzing a system 
-as its design evolves. |AADL|, the Architectural Analysis and Design Language, 
-is expressive and precise enough for such tasks---AADL and its extending
-**annexes**  bring with them model analysis and simulation capabilities.
+Models are a powerful way of designing a system and conveying its structure. 
+An expressive modeling language can provide the means for analyzing a system as
+its design evolves. One language that is expressive and precise enough to do so
+is the Architectural Analysis and Design Language.
 
-AADL is meant for modeling real-time, embedded systems. The language supports 
-the specification of data, control, and error flows, as well as both discrete 
-and continuous behaviors. This section explores the AADL models of the PCA 
-Infusion System.
+|AADL| is meant for modeling real-time, embedded systems. The language supports 
+the specification of data, control, and error flows, as well as descriptions of 
+discrete and continuous behaviors. AADL, along with extending **annexes**, 
+brings with it model analysis and simulation capabilities. This section explores 
+the AADL models of the PCA Infusion System.
 
 
+*****************************
 The System and its Components 
 *****************************
-AADL uses a component-and-connector (C&C) viewtype for representing 
-architectures. As such, it models a system as a hierarchy of runtime units or
-components: with a **component** being one of the principle processing units of 
-the executing system, and a **connector** being a mechanism by which these
-components interact.
+AADL uses a combination of the *module* and *component-and-connector* (C&C) 
+architectural viewtypes to represent a system. With a **component** being one of
+the principle processing units of the executing system, and a **connector** 
+being a mechanism by which these components interact. The module *decomposition
+style* goes on to reveal the hierarchical nature of the *attached* components
+through its use of *containment*.  
 
 .. figure:: images/app-comps&props(type).png
     :alt: Declaration of app 
     :align: center
 
-    Component-and-Connector Structure of the PCA Infusion System
+    Structure of the PCA Infusion System
     
-Above can be seen five component blocks that are connected with communication 
-links over which they can interact. The yellow labels give an idea of the
-intended purpose of the boxes and their connections. The notion of
-characterizing elements with properties is also alluded to. 
+Above can be seen five component blocks either contained by, or attached to
+other components with communication links over which they can interact. The
+yellow labels give an idea of the intended purpose of the boxes and their
+connections. They also allude to the notion of characterizing elements with
+properties.
 
     
 The System Expressed in AADL
-****************************
-The ambiguous boxes and arrows of the preceding diagram have been typed
-below with AADL component categories, thus giving them meaningful semantics. 
-Some concrete properties are also shown as being added.
+============================
+The ambiguous boxes and arrows of the preceding diagram have been typed below
+with AADL component categories, thus giving them meaningful semantics. Some
+concrete properties are shown as having been added as well.
 
 .. figure:: images/app-comps&props(inst).png
     :alt: Instantiation of app 
@@ -47,13 +51,13 @@ Some concrete properties are also shown as being added.
 
     Typed and Characterized Elements of the PCA Infusion System
     
-The figure identifies the two system software components as processes. That 
+The figure identifies the two labeled "software components" as processes. That 
 is, as memory address spaces representing compiled code and data that are 
 protected at runtime. **Processes**, **threads**, and **data** are the principle
 runtime software abstractions in AADL. Note that our design does not yet need
-to concerned itself with platform issues, so no system memory or processors have
-been defined, and the PCA Infusion System's software components are said to be
-*unbound*.
+to concern itself with platform issues, so no system **memory** or
+**processors** have been defined, leaving the PCA Infusion System's software 
+components *unbound*.
 
 The functionality and responsibilities required of the processes have been 
 partitioned into thread **subcomponents**: three in the *logic process*, and two 
@@ -63,24 +67,25 @@ devices.
 
 A **device** in AADL is a simple or complex abstraction of either an internal
 or external component. They consist of only those characteristics necessary for
-analysis and unambiguous representation. The devices in the typed system diagram
-do not represent actual medical devices, they are instead interface 
-specifications of devices the App is expecting to work with. Further, the 
-interfaces do not even have to correspond to real devices---the platform is
-allowed to connect any number of available devices to satisfy the App 
-requirements. In this sense these device components are better thought of as
-*pseudo devices*.
+analysis and unambiguous representation. Such is the case with the devices of
+the typed system diagram: instead of modeling actual medical devices, they 
+specify only the interface of those devices the App is expecting to work with.
+Further, the interfaces do not even have to correspond to real device
+interfaces. In order to satisfy the App requirements, the ICE platform is
+allowed to connect, through its middleware, to any number of available devices.
+In this sense, the pictured device components are better thought of as *pseudo
+devices*.
 
-That being said, there *are* real medical devices, and they too, can be modeled
-with AADL as a component hierarchy. This leads to the PCA Infusion System being
-comprised of two broad types of models: those that describe the app itself, and 
-those that represent the devices it interacts with to accomplish its goals. The
-following subsections elaborate on each.
-
+That being said, the system must, at some point, interact with *real* medical
+devices; these too, can be modeled with AADL as component hierarchies. The 
+upshot is that the PCA Infusion System is comprised of two broad types of
+models: those that describe the app itself, and those that represent the devices
+it needs to accomplish its goals. The following subsections elaborate on each
+type.
 
 
 The Medical App AADL Model
-**************************
+==========================
 The Shutoff App interfaces with three *pseudo* medical devices: a PCA pump, a 
 pulse oximeter, and a capnography. The AADL models that specify all these 
 components are described in this section.
@@ -89,24 +94,24 @@ components are described in this section.
     :alt: Instantiation of **app** AADL model 
     :align: center
     
-    Caption
+    PCA Infusion System from Point of View of the Shutoff App 
 
 
 
 
 PCAShutoffApp.aadl
-==================
+------------------
 **Structure and Rationale**
 
 logic.aadl
-----------
+^^^^^^^^^^
 
 display.aadl
-------------
+^^^^^^^^^^^^
 
 
 Pseudo Medical Devices
-======================
+^^^^^^^^^^^^^^^^^^^^^^
 **Medical device interfaces**    
 
 
@@ -123,13 +128,13 @@ Pseudo Medical Devices
 
 
 Medical Device Models
-*********************
+^^^^^^^^^^^^^^^^^^^^^
 .. Strictly speaking, needs the interfaces...
 .. (App requirements and device matching??)
 
 .. (Generated files??)
 
-.. The *Shut-off App* system obviously needs a PCA pump to control. The only 
+.. The *Shutoff App* system obviously needs a PCA pump to control. The only 
 .. capability beyond normal functionality it is required to possess, is a command
 .. port through which a signal may shut it off.
 
@@ -144,17 +149,22 @@ Medical Device Models
 .. * Devices
 
 
-PCAShutoffApp_pulseox.aadl
+PCAShutoffApp_spo2.aadl
 ==========================
 **Structure and Rationale**
 
+.. literalinclude:: snippets/PCAShutoffApp_spo2.aadl
+    :language: aadl
+..    :linenos:
 
-PCAShutoffApp_capnog.aadl
+
+
+PCAShutoffApp_etco2.aadl
 =========================
 **Structure and Rationale**
 
 
-PCAShutoffApp_pcapump.aadl
+PCAShutoffApp_pcastop.aadl
 ==========================
 **Structure and Rationale**
 
@@ -168,6 +178,21 @@ PCAShutoffApp_pcapump.aadl
 .. Eclipse Project File
 .. ====================
 
+.. .. literalinclude:: snippets/PCAShutoffApp.project
+.. ..    :language: xml
+..    :linenos:
+
 
 .. Existence of pump with stop action, SpO2, EtCO2, respiration rate measures.
 .. Pseudo devices
+
+
+.. .. literalinclude:: snippets/PCAShutoffApp_Types.aadl
+.. ..    :language: aadl
+..    :linenos:
+
+
+.. .. literalinclude:: snippets/PCAShutoffApp_spo2.req.xml
+.. ..    :language: xml
+..    :linenos:
+    

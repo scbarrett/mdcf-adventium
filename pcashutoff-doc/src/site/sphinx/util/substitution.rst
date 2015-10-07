@@ -1,4 +1,4 @@
-.. |PCA Shut-off| replace:: `MDCF PCA Shut-off App <https://github.com/scbarrett/mdcf-adventium>`__
+.. |PCA Shutoff| replace:: `MDCF PCA Shutoff App <https://github.com/scbarrett/mdcf-adventium>`__
 
 .. |OSATE2| replace:: `OSATE2 <https://wiki.sei.cmu.edu/aadl/index.php/Osate_2>`__
 

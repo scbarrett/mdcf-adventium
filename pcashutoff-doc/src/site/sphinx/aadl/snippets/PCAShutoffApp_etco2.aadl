@@ -1,0 +1,21 @@
+package PCAShutoffApp_etco2
+public
+  with MAP_Properties;
+  with PCAShutoffApp_Types;
+
+device PCAShutoffApp_etco2
+features
+  etco2_per: out event data port PCAShutoffApp_Types::etco2 {
+    MAP_Properties::Exchange_Name => "etco2_per";
+  };
+
+  respire_per: out event data port PCAShutoffApp_Types::respire {
+    MAP_Properties::Exchange_Name => "respire_per";
+  };
+
+end PCAShutoffApp_etco2;
+
+device implementation PCAShutoffApp_etco2.impl
+end PCAShutoffApp_etco2.impl;
+
+end PCAShutoffApp_etco2;
