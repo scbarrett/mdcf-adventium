@@ -133,4 +133,5 @@ Sensors
 * Monitoring devices
 * rr, spo2, etco2 feedback
 
+relate descriptions to metrics mentioned in next section
 .. * effectively collapsed them into one device

@@ -85,8 +85,8 @@ describe the devices it needs to use in order to accomplish its goals. Models of
 each type are elaborated on in the subsections that follow.
 
 
-Modeling the Medical App
-========================
+The Medical App Models
+======================
 A graphical layout for components of the PCA Infusion System as created in the
 open-source AADL tool platform, |OSATE2| is depicted below. The model is 
 constructed from the PCA Shutoff App's point of view, basically looking outward 
@@ -108,7 +108,6 @@ Software Subcomponents
 
 PCAShutoffApp.aadl
 ^^^^^^^^^^^^^^^^^^
-* Structure and Rationale
 
 .. logic.aadl
 .. ^^^^^^^^^^
@@ -124,42 +123,41 @@ devices, the interfaces for controlling the PCA pump and for obtaining the
 required physiological measures comprise three separate models: one for each
 pseudo device, and named accordingly.
 
+Describe first in detail, give brief information for others...
+
 PCAShutoffApp_pulseox.aadl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-This AADL package declares two exchanges of a pulse oximeter device through
-which the app expects to gather measures of the patient's peripheral capillary
-oxygen saturation (SpO\ :sub:`2`). One is an irregular *get* exchange, and the
-other a regular *periodic* exchange. These exchanges correspond to the 
-*requester-responder* and the *publisher-subscriber* simple communication 
-patterns (SCP), respectively (see :ref:`comm_patterns`).
-  
-
-
-The bi-directional "get" feature is made up of two 
-uni-directional AADL ports 
-
-
- 
-
+This AADL package declares two communication *exchanges* for a pulse oximeter 
+device through which the app expects to gather measurements of the patient's
+peripheral capillary oxygen saturation (SpO\ :sub:`2`). The concept of an
+exchange maps to AADL **ports**, which are structured to implement one of the
+MDCF simple communication patterns (SCP) (see :ref:`comm_patterns`). A "get" 
+exchange consisting of two AADL ports implements the *requester-responder* 
+communication pattern, and is aperiodic in nature, while a "periodic" exchange
+is the opposite, and implements a *publisher-subscriber* pattern.
 
 .. literalinclude:: snippets/PCAShutoffApp_pulseox.aadl
     :language: aadl
+    :linenos:
+
+Note that in the case of the "get" exchange, bi-directional information has been 
+constrained to flow through two uni-directional ports. This is because the type 
+of information flowing is asymmetric with respect to direction, which cannot be
+modeled in AADL in a general way.  
 
 
 
 
 PCAShutoffApp_etco2.aadl
 ------------------------
-* Structure and Rationale
 
 
 PCAShutoffApp_pcastop.aadl
 --------------------------
-* Structure and Rationale
 
 
-Modeling the Medical Devices
-============================
+The Medical Device Models
+=========================
 
 
 .. **Medical device interfaces**    

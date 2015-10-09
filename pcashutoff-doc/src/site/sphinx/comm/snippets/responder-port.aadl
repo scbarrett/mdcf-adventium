@@ -1,0 +1,2 @@
+in event port (request signal)
+out event data port (requested data)
