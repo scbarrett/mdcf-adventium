@@ -55,27 +55,39 @@ Simple Communication Patterns (SCP)
 
 **Communication patterns in AADL**
 
-* Publisher replaces server side of "Periodic" and "Sporadic" exchanges
-
-.. literalinclude:: snippets/publisher-port.aadl
-    :language: aadl
-
-* Subscriber­ replaces client side of "Periodic" and "Sporadic" exchanges
+* Subscriber -- replaces client side of "Periodic" and "Sporadic" exchanges
 
 .. literalinclude:: snippets/subscriber-port.aadl
     :language: aadl
 
-* Requester replaces client side of "Get" exchange
+* Publisher -- replaces server side of "Periodic" and "Sporadic" exchanges
+
+.. literalinclude:: snippets/publisher-port.aadl
+    :language: aadl
+
+* Requester -- replaces client side of "Get" exchange
 
 .. literalinclude:: snippets/requester-port.aadl
     :language: aadl
 
-* Responder­ replaces server side of "Get" exchange
+* Responder­ -- replaces server side of "Get" exchange
 
 .. literalinclude:: snippets/responder-port.aadl
     :language: aadl
 
+* Sender -- replaces client side of "Set" exchange
 
+.. literalinclude:: snippets/sender-port.aadl
+    :language: aadl
+
+* Receiver­ -- replaces server side of "Set" exchange
+
+.. literalinclude:: snippets/receiver-port.aadl
+    :language: aadl
+
+* Initiator ­--
+
+* Executor ­--
 
 
 **Notes**
